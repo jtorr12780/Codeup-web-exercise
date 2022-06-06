@@ -3,7 +3,7 @@
 console.log( "Hello from external Javascript")
 alert("Welcome to my Website!")
 
-var response=prompt(" What is your favorite color?");
+let response=prompt(" What is your favorite color?");
 alert("Great, " + response + " is my favorite color too!");
 
 /*You have rented some movies for your kids:
@@ -12,10 +12,10 @@ and Hercules (1 day, you don't know yet if they're going to like it).
 If price for a movie per day is $3, how much will you have to pay?
 */
 
-let numberOfDays = prompt ( "How many number of days will you rent some movies?")
 let pricePerDay = 3;
-let littleMermaid= 3,brotherBear=5, hercules=1;
-alert("Will pay " + total + "to rent movies");
+let numOfDaysRented = prompt("Thank you for using Papa's Rental Movie," +
+    "How many days would you like to rent your movies?")
+alert("You will be renting the movie for " + numOfDaysRented + " days. You will pay $" + (numOfDaysRented * pricePerDay));
 
 /*Suppose you're working as a contractor for 3 companies:
 Google, Amazon and Facebook, they pay you a different rate per hour.
@@ -27,13 +27,16 @@ let amazonRatePerHour = 380
 let googleRatePerHour = 400
 let facebookRatePerHour = 350
 
-let totalGoogle = prompt("This is how much money will I get pay $" + (googleRatePerHour * ""))
-let totalFacebook = prompt("This is how much money will I get pay $")
-let totalAmazon = prompt("This is how much money will i get pay $")
+let sumGoogle = googleRatePerHour * totalGoogle;
 
-let paycheck = (googleRatePerHour*totalGoogle)+(amazonRatePerHour*totalAmazon)
-+ (facebookRatePerHour*totalFacebook);
-alert("I got pay this much $" + paycheck + "awesome!");
+let totalGoogle = prompt("This is how much money will I get pay working for Google")
+let totalFacebook = prompt("This is how much money will I get pay working for Facebook")
+let totalAmazon = prompt("This is how much money will i get pay working for Amazon")
+// let sumGoogle = googlePay * totalGoogle; //could create a variable to get the total?
+
+alert("You will earn $" + sumGoogle + "from working at Google. You'll earn $" + (totalAmazon * amazonRatePerHour) + "from Amazon you'll earn $" + (totalFacebook * facebookRatePerHour) + "from Facebook! Good job!" )
+
+
 
 
 //A student can be enrolled in a class only if the class is not full and the class

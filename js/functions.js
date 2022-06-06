@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name){
-    return ("Hello" + name);
+    return "Hello" + name;
 }
 
 /**
@@ -19,17 +19,19 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello(name)
-let helloMessage = sayHello(name)
+
+let helloMessage = sayHello("Jose")
+console.log(helloMessage)
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-let myName = "Jose"
-sayHello(myName)
-console.log(sayHello(myName))
+let myName = "Jose";
+
+console.log(sayHello(myName));
+//
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -53,11 +55,16 @@ let random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-function isTwo(number){
-    return number == 2;
-
+function isTwo(number) {
+    return number === 2;
 }
-
+// i function name = isTwo
+// ii take in one parameter
+// iii return boolean
+// function isTwo(num){
+// return === 2;
+//
+//console.log(isTwo(random)
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -69,21 +76,25 @@ function isTwo(number){
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(percentage, totalBill){
-    let decimal = percentage * .01
+function calculateTip(tipAmount, totalBill){
+    let tipImDollars = tipAmount* totalBill;
     return percentage * totalBill;
+    // return tipAmount * billTotal; Maybe instead of returning the math directly, you used a variable instead:
+    return tipImDollars;
 }
 
-
+//
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let totalBill = prompt("How much is the total bill?");
-let percentage = prompt("How much would you like to tip?");
-alert("This is how much you should tip $" + percentage * totalBill)
+alert("Thank you for eating at the Zoo dinner, let see the total bill and the amount you would like to tip?")
+
+let totalAmount = prompt ("How was the bill at the Zoo dinner?")
+let tipAsDecimal = prompt("How much you like to tip $" + totalAmount + "?")
+alert("The final bill with the tip included is $" + calculateTip(tipAsDecimal, totalAmount))
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -101,10 +112,9 @@ alert("This is how much you should tip $" + percentage * totalBill)
  */
 
 function applyDiscount(price, discountPer){
-    let decimal = discountPer * .01;
-    return price * discountPer;
+    // return originalPrice - (originalPrice * discountAsDeci);
+    //Below: A more advanced thought, we can call calculateTip into the mix here to
+    // D R Y - do our math that we want to do without rewriting it :D
+    return price - calculateTip(discountPer, price);
 }
 
-let price = prompt("How much is the total price?");
-let discountPer = prompt("How much would you like to tip?");
-alert("This is how much discount should be $" + (price * discountPer))
