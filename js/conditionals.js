@@ -23,51 +23,69 @@
  * console.logging the function's return value
  */
 /*
-function analyzeColor(color){
-
-    if (color === "blue") {
-        return "blue is cool"
-    } else if (color === "red") {
-        return "red is a warm color"
-    } else {
-        return "huh i've never heard of that color"
-    }
-}
-
+f// function analyzeColor(color){
+//     let message = "";
+//
+//     color = color.toLowerCase();
+//
+//     if(color === "red"){
+//         message = "Red is a common color associated with stop signs! Or more deliciously apples";
+//     } else if (color === "orange"){
+//         message = color + " is associated with a famous royal family from Europe as well as the eponymous fruit!";
+//     } else if (color === "yellow") {
+//         message = "Yellow sounds like a lemon to me - pretty good for a hot day when you make some lemonade!";
+//     } else {
+//         message = color + "? I'd have to look up " + color + ".";
+//     }
+//
+//     return message;
+// }
+*/
 
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
-//                  will contain a different color every time the page loads)
-let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-let randomColor = colors[Math.floor(Math.random() * colors.length)];
-/**
+//will contain a different color every time the page loads)
+var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+var randomColor = colors[Math.floor(Math.random() * colors.length)];
+/*
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
-//console.log(analyzeColor(randomColor))
+console.log(analyzeColor(randomColor))
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-let color = prompt(" What is your favorite color?")
+
 function analyzeColor(color){
-    switch(color) {
-        case "blue":
-            alert("blue is cool");
-            break;
+    console.log("The color is " + color);
+
+    let message = "";
+
+    color = color.toLowerCase();
+
+    switch(color){
         case "red":
-            alert("red is a warm color");
+            message = "Red is a common color associated with stop signs! Or more deliciously apples";
+            break;
+        case "orange":
+            message = color + " is associated with a famous royal family from Europe as well as the eponymous fruit!"
+            break;
+        case "yellow":
+            message = "Yellow sounds like a lemon to me - pretty good for a hot day when you make some lemonade!"
             break;
         default:
-            alert("huh i've never heard of that color");
+            message = color + "? I'd have to look up " + color + ".";
             break;
+
     }
+
+    return message;
 }
-analyzeColor(color)
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -96,27 +114,23 @@ analyzeColor(color)
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-let luckyNum = prompt("What is my lucky number!");
-let discountPrice = 0;
+function calculateTotal(luckyNum, totalPrice){
 
-function calculateTotal(luckyNum, totalAmt){
-    if (luckyNum === 0) {
-        return "No discount, sorry!"
-    } else if (luckyNum === 1) {
-            return "Congratulation, you got a 10% discount, this is your final amount $!" +
-                (discountPrice - (totalAmt * .10 ));
-        } else if (luckyNum === 2) {
-            return "Congratulation, you got a 25% discount, this is your final amount $!" +
-                (discountPrice - (totalAmt * .25));
-        } else if (luckyNum === 3) {
-            return "Congratulation, you got a 35% discount, this is your final amount $!" +
-                (discountPrice - (totalAmt * .35));
-        } else if (luckyNum === 4) {
-            return "Congratulation, you got a 50% discount, this is your final amount $!" +
-                (discountPrice - (totalAmt * .50));
-        } else if (luckyNum >= 5) {
-            return "Your lucky day, everything is free, this is your final amount $!"
+    if (luckyNum === 0){ // no discount
+        return totalPrice;
+    } else if (luckyNum === 1) { //ten percent
+        return totalPrice - (totalPrice * .10);
+    } else if (luckyNum === 2){ //25 percent off
+        return totalPrice - (totalPrice * .25);
+    } else if (luckyNum === 3){ //35 percent
+        return totalPrice - (totalPrice * .35);
+    } else if (luckyNum === 4){ //50% off
+        return totalPrice - (totalPrice * .50);
+    } else if (luckyNum === 5){ //Free :o
+        return 0;
     }
+
+
 }
 
 /**
@@ -128,7 +142,7 @@ function calculateTotal(luckyNum, totalAmt){
  * price before the discount was, and what their price after the discount is.
  */
  //Generate a random number between 0 and 6
- let luckyNumber = Math.floor(Math.random() * 6);
+ var luckyNumber = Math.floor(Math.random() * 6);
 
 /**
  * TODO:
@@ -152,62 +166,35 @@ function calculateTotal(luckyNum, totalAmt){
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-function isEven (number){
-    if (number % 2 === 0) return true; return false};
+function numberGame() {
+    let userStart = confirm("Would you like to enter a number?");
 
-function isPositive (number){
-    if (number>0) return true; return false};
+    if (userStart) {
+        //Happy path where user wanted to give us a number
+        let userNum = prompt("Okay! Cool - gimme a number please!");
 
-function isNegative (number) {
-    if (number<0)return true; return false};
+        userNum = Number(userNum);
 
+        if (isNaN(userNum)) { //If I convert the input to a Number did I get NaN [true] or a numeric false [false - it is a number I got]
+            alert("Incorrect data type - you entered a value that was not a number. Please run the application and try again.")
 
+        } else {
+            alert("Your number plus 100 is " + (userNum + 100));
 
-/*let positiveEvenNumber = randomPositiveEvenNumber();
-let positiveOddNumber = randomPositiveOddNumber();
-let negativeEvenNumber = randomNegativeEvenNumber();
-let negativeOddNumber = randomNegativeOddNumber();
+            if (userNum % 2 === 0) {
+                alert("Your number was even :D")
+            } else {
+                alert("Your number was odd :D")
+            }
 
-function randomPositiveEvenNumber() {
-    let randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if(randomNumber % 2 !== 0) {
-        return randomPositiveEvenNumber()
+            if (userNum >= 0) {
+                alert("You were feeling POSITIVE today with your number")
+            } else {
+                alert("You were feeling negative today with your number")
+            }
+        }
+    } else {
+        //Unhappy path where user is against numbers? Did not want to play? Just did not give us a "true" to continue
+        alert("Sorry to ask - just wanted to see if you wanted to enter a number. TTYL :)")
     }
-
-    return randomNumber;
 }
-
-// this function generates a random number that is both positive and odd
-function randomPositiveOddNumber() {
-    let randomNumber = Math.ceil(Math.random() * 100) + 10;
-    if(randomNumber % 2 === 0) {
-        return randomPositiveOddNumber();
-    }
-
-    return randomNumber;
-}
-
-// this function generates a random number that is both negative and even.
-function randomNegativeEvenNumber() {
-    let randomNumber = Math.ceil(Math.random() * -100) - 10;
-    if(randomNumber % 2 === 0) {
-        return randomNumber;
-    }
-
-    return randomNegativeEvenNumber();
-}
-
-// this function generates a random number that is both negative and odd.
-function randomNegativeOddNumber() {
-    let randomNumber = Math.ceil(Math.random() * -100) - 10;
-    if(randomNumber % 2 === 0) {
-        return randomNegativeOddNumber();
-    }
-
-    return randomNumber;
-}
-
-
-
-
-*/
