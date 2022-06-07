@@ -4,28 +4,33 @@
 // the multiplication table for that number (just multiply by the numbers 1 through 10)
 //For example, showMultiplicationTable(7) should output
 
-const number = parseInt(prompt("Enter a number : "));
-
-    for (let i=1; i<=10; i++) {
-        console.log(number + " x " + i + " = " + number * i);
+function showMultiplicationTable(num) {
+   let i = 1;
+    while (i <= 10) {
+        console.log(num + "x" + i + "=" + (num * i));
+        i++;
     }
-
+}
 //Use a for loop and the code from the previous lessons
 // to generate 10 random numbers between 20 and 200
 // and output to the console whether each number is odd or even.
 // For example:
 
-for (let i = 20; i <= 200; i++) {
+//Use math.random() to generate a number between 20 and 200
+//THEN use your loop to tell me if that random NUMBER was odd or even
 
-    if (i % 2 !== 0){
+// console.log("Random number" + randomNum)
 
-    console.log("Odd number" + i); }
+for (let i = 1; i <= 10; i++) {
+    let randomNum = Math.floor(Math.random() * 200) + 20;
 
-    if (i % 2 === 0){
-
-        console.log(" Even number" + i);
+    if (randomNum % 2 === 0) {
+        console.log("Even number:" + randomNum);
+    } else {
+        console.log("Odd number:" + randomNum);
     }
 }
+
 
 /*Create a for loop that uses console.log to create the output shown below.
 
@@ -39,7 +44,17 @@ for (let i = 20; i <= 200; i++) {
 7777777
 88888888
 999999999
- */
+*/
+
+function increase(num) {
+    for (let i = 1; i < 10; i++) {
+        let count = [];
+        for (let a = 1; a <= i; a++) {
+            count.push(i);
+        }
+        console.log(count.join(""));
+    }
+}
 
 
 
@@ -109,7 +124,6 @@ Here is an odd number: 49
 
 /*While Loops
 Create a file named while.js in the js directory.
-*/
     let random = Math.floor((Math.random()*50)+1);
 
     console.log("Random odd number to skip is:" + random);
@@ -153,12 +167,12 @@ Create a file named while.js in the js directory.
 65536
 */
 
-    let i = 1;
-
-    while (i < 65536) {
-        i = i * 2
-        console.log(i);
-    }
+    // let i = 1;
+    //
+    // while (i < 65536) {
+    //     i = i * 2
+    //     console.log(i);
+    // }
 
 /*Do While Loop
 An ice cream seller can't go home until she sells all of her cones.
@@ -171,9 +185,9 @@ The below code shows how to get the random numbers for this exercise.
 */
 
 // This is how you get a random number between 50 and 100
-let allCones = Math.floor(Math.random() * 50) + 50;
+// let allCones = Math.floor(Math.random() * 50) + 50;
 // This expression will generate a random number between 1 and 5
-Math.floor((Math.random() * 5) + 1);
+// Math.floor((Math.random() * 5) + 1);
 
 
 /*The output should be similar to the following:
