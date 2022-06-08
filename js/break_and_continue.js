@@ -34,16 +34,54 @@ Here is an odd number: 43
 Here is an odd number: 45
 Here is an odd number: 47
 Here is an odd number: 49
+
+ Prompt the user for an odd number between 1 and 50.
+    Use a loop and a break statement to continue prompting the user if they enter invalid input.
+    Use a loop and the continue statement to output all the odd numbers between 1 and 50,
+    except for the number the user entered.
  */
+// let userInput = prompt("Enter a number between 1 and 50 ") //all prompts return strings
+
+//Making the first loop - trap our user and only let them out ["break"] **IF** they give us an odd number to work with
+//Probably a while loop or do while loop
+
+while(true){
+    var userInput = prompt("Enter an odd number between 1 and 50 ")
+    if(userInput % 2 === 0 ){
+        console.log("that number is even......")
+    } else if(userInput < 1){
+        console.log("number must be greater than or = to 1")
+    } else if(userInput > 50){
+        console.log("number must be greater than 50")
+    } else {
+        break;
+    }
+
+}
 
 
-let user = prompt("Enter Odd number between 1 and 50")
 
-     for (let i = 1; i < 50; i++) {
-         console.log()
-         break;
-     }
-
+//     let i = 1;
+//
+//     while (i <= 50) {
+//         console.log( );
+//         i++;
+//         if (i % 2 !== 0 );{
+//             alert("Wrong! Please enter correct information");
+//             break;
+//         }
+// }
+//Making the second loop - prints out nums 1 - 50 and 'continues' if number is even or when we get to the user's number
+    for(let i = 1; i < 50; i++){
+        if (i % 2 === 0) {
+        continue;
+        }
+        if (i == userInput) {
+        console.log("yikes!! skipping " + userInput);
+        } else{
+        console.log(i + "is an odd number");
+    }
+}
 /*While Loops
 Create a file named while.js in the js directory.
 */
@@ -70,31 +108,13 @@ Create a file named while.js in the js directory.
 32768
 65536
 */
-//let i = 1;
 
-//while (i < 65536) {
-//    i = i * 2
-//    console.log(i);
-//}
+function output(){
+    let i = 1;
 
-/*Do While Loop
-An ice cream seller can't go home until she sells all of her cones.
-First write enough code that generates a random number between 50 and 100
-representing the amount of cones to sell before you start your loop.
-Inside of the loop your code should generate another random number between 1 and 5,
-simulating the amount of cones being bought by her clients.
-Use a do-while loop to log to the console the amount of cones sold to each person.
-The below code shows how to get the random numbers for this exercise.
-*/
+    while (i < 65536) {
+        i = i * 2
+        console.log(i);
+    }
+}
 
-// This is how you get a random number between 50 and 100
-// let allCones = Math.floor(Math.random() * 50) + 50;
-// This expression will generate a random number between 1 and 5
-// Math.floor((Math.random() * 5) + 1);
-
-
-/*The output should be similar to the following:
-
-    5 cones sold...  // if there are enough cones
-Cannot sell you 6 cones I only have 3...  // If there are not enough cones
-Yay! I sold them all! // If there are no more cones*/
