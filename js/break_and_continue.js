@@ -59,7 +59,7 @@ while(true){
 
 }
 
-
+//this code below is confusing me. On line 66 why don't we have to redeclare i
 
 //     let i = 1;
 //
@@ -71,6 +71,8 @@ while(true){
 //             break;
 //         }
 // }
+
+
 //Making the second loop - prints out nums 1 - 50 and 'continues' if number is even or when we get to the user's number
     for(let i = 1; i < 50; i++){
         if (i % 2 === 0) {
