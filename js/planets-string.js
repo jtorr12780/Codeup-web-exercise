@@ -3,7 +3,7 @@
 
     var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
     console.log(planetsString);
-
+    var planetsArray;
     /**
      * TODO:
      * Convert planetsString to an array, and save it in a variable named
