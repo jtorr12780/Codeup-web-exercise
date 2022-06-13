@@ -11,12 +11,15 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    const person = {
+    let person = {
         firstName : "Jose",
         lastName : "Torres",
+        sayHello(){
+            return "Hello " + this.firstName + " " + this.lastName;
+        }
     };
-
-
+    console.log(person)
+    console.log(person.sayHello());
 
     /**
      * TODO:
@@ -28,12 +31,7 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    sayHello= function () {
-        return "Hello" + sayHello.firstName + " " + sayHello.lastName + "!";
-    };
-    console.log();
-
-//
+ 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -48,11 +46,33 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    let shoppers = [
+         {name: 'Cameron', amount: 180},
+         {name: 'Ryan', amount: 250},
+         {name: 'George', amount: 320}
+     ];
+
+    function discountPrice (total, discountRate) {
+        total = parseFloat(total)
+        discountRate = parseFloat(discountRate)
+        return total - (total * (discountRate * 0.01));
+    }
+
+    function buyMore (input){
+        input = parseFloat(input)
+        return 200 - input;
+    }
+
+    shoppers.forEach(function (shopper) {
+        shopper.amount = parseFloat(shopper.amount).toFixed(2)
+        if (shopper.amount >= 200) {
+            console.log(shopper.name + " spent $" + shopper.amount + " and is receiving a " +
+                "12% discount! The new total is $" + parseFloat(discountPrice(shopper.amount, 12)).toFixed(2))
+        } else {
+            console.log(shopper.name + " spent $" + shopper.amount + " and is receiving no " +
+                "discount. Needs to spend another $" + parseFloat(buyMore(shopper.amount)).toFixed(2) + " to receive the discount.")
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -66,7 +86,26 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    let books = [
+        {
+            title: "Letting Go",
+            author: {firstName: "Philip", lastName: "Roth"},
+        },
+        {
+            title: "Fear of Flying",
+            author: {firstName: "Erica", lastName: "Jong"},
+        },{
+            title: "When Breath Becomes Air",
+            author: {firstName: "Paul", lastName: "Kalanithi"},
+        },{
+            title: "The Adventures of Tom Sawyer",
+            author: {firstName: "Mark", lastName: "Twain"},
+        },{
+            title: "Charlotte's Web",
+            author: {firstName: "E.B", lastName: "White"},
+        }
+    ]
+    console.log(books);
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -91,7 +130,13 @@
      *      ---
      *      ...
      */
-
+    books.forEach(function(book, index) {
+        let bookNumber = index + 1
+        console.log("Book # " + bookNumber);
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+        console.log("-------------")
+    });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -102,5 +147,6 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
 
 })();
