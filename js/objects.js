@@ -73,7 +73,9 @@
                 "discount. Needs to spend another $" + parseFloat(buyMore(shopper.amount)).toFixed(2) + " to receive the discount.")
         }
     });
-
+// shoppers.foreach()(function(shopper) {
+// let outputString = ` ${shopper.name} ${shopper.lastname}
+// }
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -106,6 +108,7 @@
         }
     ]
     console.log(books);
+    // let books = [];
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -135,7 +138,7 @@
         console.log("Book # " + bookNumber);
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-        console.log("-------------")
+        console.log("----------------------------")
     });
     /**
      * Bonus:
