@@ -1,4 +1,43 @@
-.fancy-header {
-    color: purple;
-    text-decoration: underline;
+/*.fancy-header {*/
+/*    color: purple;*/
+/*    text-decoration: underline;*/
+/*}*/
+
+h1 {
+    text-align: center;
+    color:maroon;
+    text-decoration: underline black;
+}
+h3 {
+    color: maroon;
+}
+body {
+    background-image: url("/img/city.jpg");
+    background-color: lightsteelblue;
+    background-repeat: repeat;
+    background-position-x: unset;
+    background-position-y: bottom;
+    background-blend-mode: unset;
+    font-family: fantasy;
+    font-size: 20px;
+}
+ul, ol{
+    list-style: circle;
+}
+table, tr, td {
+    border: 5px;
+    padding: 15px;
+    font-size: large;
+}
+a:link {
+    color:brown;
+}
+a:visited {
+    color:black;
+}
+a:hover {
+    color:blue;
+}
+a:active {
+    color:green;
 }
