@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Forms</title>
+    <title>Register With Us</title>
 </head>
 <body>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <h1>Register With Us</h1>
+            <label for="email">Email:</label>
+            <input id="email" type="text" name="email" placeholder="Enter your email">
+            <label for="password">Password:</label>
+            <input id="password" type="password" name="password" placeholder="Enter your password"><br>
+            <label for="bio">Bio:</label><br>
+            <textarea id="bio" name="bio" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+            <br>
 
-<form method="POST" action="https://request-inspector.glitch.me/">
- 
-</form>
-
+            <h2>How did you hear about us?</h2>
+        <div>
+            <label><input id="billboard" type="radio" name="Advertising" value="billboard">Billboard</label><br>
+            <label><input id="radio advertisement" type="radio" name="Advertising" value="radio advertisement">radio advertisement</label><br>
+            <label><input id="internet advertisement" type="radio" name="Advertising" value="internet advertisement">internet advertisement</label><br>
+            <label><input id="other" type="radio" name="Advertising" value="other">other</label><br>
+        </div>
+            <h3>What browser are you using?</h3>
+              <label for="browser">
+                <select id="browser" name="browser">
+                    <option value="null"  selected>-Select-</option>
+                    <option value="Safari">Safari</option>
+                    <option value="Chrome">Chrome</option>
+                    <option value="FireFox">FireFox</option>
+                    <option value="DuckDuckGo">DuckDuckGo</option>
+                </select></label>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
